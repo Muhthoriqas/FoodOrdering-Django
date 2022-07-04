@@ -1,0 +1,63 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<style>
+		body,
+		html {
+			background-image: url( "{% static 'image/bg3.jpg' %}");
+		}	
+	</style>
+
+</head>
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Menu Tersedia</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Produk</th>
+							<th>Category</th>
+							<th>Harga</th>
+						</tr>
+						{% for i in products %}
+							<tr>
+								<td>{{i.name}}</td>
+								<td>{{i.category}}</td>
+								<td>{{i.price}}</td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+			
+		</div>
+		<h3></h3>
+		<footer class="bg-light text-center text-lg-start">
+			<div class="container p-4">
+			  <!--Grid row-->
+				  <h5 class="text-uppercase">KONTAK KAMI</h5>
+
+				  <p>
+					<p> 0812 3456 7890</p>
+					<p> Jalan Konoha,Bumi</p>
+				  </p>
+			
+			</div>  
+			<!-- Copyright -->
+			<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+				Copyright © 2020 
+			  <a class="text-dark" >ThoriqAs</a>
+			</div>
+			<!-- Copyright -->
+		  </footer>
+{% endblock content %}
+</html>

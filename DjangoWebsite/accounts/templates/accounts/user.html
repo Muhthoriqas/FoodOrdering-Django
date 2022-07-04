@@ -1,0 +1,44 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+{%  include 'accounts/status.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<style>
+		body,
+		html {
+			background-image: url( "{% static 'image/bg5.jpg' %}");
+		}	
+	</style>
+
+</head>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Produk</th>
+					<th>Note</th>
+					<th>Tanggal Order</th>
+					<th>Status</th>
+				</tr>
+
+				{% for order in orders %}
+
+				<tr>
+					<td>{{order.product}}</td>
+					<td>{{order.note}}</td>
+					<td>{{order.date_created}}</td>
+					<td>{{order.status}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
+</html>
